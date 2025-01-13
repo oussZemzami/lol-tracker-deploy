@@ -1,1 +1,11 @@
+version: "3.8"
 
+services:
+  react-app:
+    image: oussamazemzami/lol-tracker-frontend:v0.0.9
+    container_name: lol-tracker-frontend
+    ports:
+      - "3000:80" # Mappe le port 80 du conteneur sur le port 3000 de la machine hôte
+    environment:
+      - NODE_ENV=production # Assurez-vous que l'environnement est défini correctement
+    restart: unless-stopped
